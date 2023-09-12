@@ -1,6 +1,12 @@
 name: NanoCAN
 
-on: [pull_request, push, workflow_dispatch]
+on: 
+  pull_request:
+  push:
+    paths-ignore:
+    - ".github/**"
+    - "configs/**"
+  workflow_dispatch:
 
 
 jobs:
