@@ -4,12 +4,14 @@ on:
     tags:
     - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
 
-name: Upload Release Asset
+name: Create Release
 
 jobs:
-  build:
-    name: Upload Release Asset
+  release:
+    name: Create Release
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
