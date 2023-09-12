@@ -1,6 +1,6 @@
 
 permissions:
-  issues: write
+  contents: write
 
 on:
   push:
