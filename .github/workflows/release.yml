@@ -1,3 +1,7 @@
+
+permissions:
+  issues: write
+
 on:
   push:
     # Sequence of patterns matched against refs/tags
@@ -10,8 +14,6 @@ jobs:
   release:
     name: Create Release
     runs-on: ubuntu-latest
-    permissions:
-      issues: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
