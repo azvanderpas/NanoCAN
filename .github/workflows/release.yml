@@ -15,8 +15,13 @@ jobs:
     name: Create Release
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: Wait for tests to succeed
+        uses: lewagon/wait-on-check-action@v1.3.1
+        with:
+          ref: ${{ github.ref }}
+          check-name: 'NanoCAN'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 5
       - name: Download workflow artifact
         uses: dawidd6/action-download-artifact@v2.27.0
         with:
