@@ -1,0 +1,30 @@
+on:
+  push:
+    # Sequence of patterns matched against refs/tags
+    tags:
+    - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+
+name: Upload Release Asset
+
+jobs:
+  build:
+    name: Upload Release Asset
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Download workflow artifact
+        uses: dawidd6/action-download-artifact@v2.27.0
+        with:
+          workflow: main.yml
+          workflow_conclusion: success
+          branch: main
+          name: output
+          if_no_artifact_found: fail
+      - name: Release with Notes
+        uses: softprops/action-gh-release@v1
+        with:
+          files: output
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
