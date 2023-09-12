@@ -15,14 +15,14 @@ jobs:
     name: Create Release
     runs-on: ubuntu-latest
     steps:
-      - name: Wait for tests to succeed
+      - name: Wait for export to succeed
         uses: lewagon/wait-on-check-action@v1.3.1
         with:
           ref: ${{ github.ref }}
           check-name: 'kicad-export'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           wait-interval: 5
-          allowed-conclusions: success,cancelled
+          allowed-conclusions: success
       - name: Download workflow artifact
         uses: dawidd6/action-download-artifact@v2.27.0
         with:
