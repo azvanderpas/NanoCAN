@@ -28,7 +28,6 @@ jobs:
         with:
           workflow: main.yml
           workflow_conclusion: success
-          branch: main
           commit: $GITHUB_SHA
           name: output
           if_no_artifact_found: fail
