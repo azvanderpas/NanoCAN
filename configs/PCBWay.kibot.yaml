@@ -76,9 +76,16 @@ outputs:
         - from_output: PCBWay_drill
           dest: /
 
-  - name: Render 3D
+  - name: Render 3D Top
     type: render_3d
     dir: PCBWay
     options:
       view: 'top'
+      auto_crop: true
+      
+  - name: Render 3D Bottom
+    type: render_3d
+    dir: PCBWay
+    options:
+      view: 'bottom'
       auto_crop: true
