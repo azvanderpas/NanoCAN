@@ -75,3 +75,10 @@ outputs:
           dest: /
         - from_output: PCBWay_drill
           dest: /
+
+  - name: Render 3D
+    type: render_3d
+    dir: PCBWay
+    options:
+    - view: 'top'
+    - auto_crop: true
