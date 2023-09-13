@@ -80,5 +80,5 @@ outputs:
     type: render_3d
     dir: PCBWay
     options:
-    - view: 'top'
-    - auto_crop: true
+      view: 'top'
+      auto_crop: true
