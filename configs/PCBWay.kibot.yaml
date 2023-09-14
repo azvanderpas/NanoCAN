@@ -89,3 +89,15 @@ outputs:
     options:
       view: 'bottom'
       auto_crop: true
+
+  - name: Render 3D Orthographic
+    type: render_3d
+    dir: PCBWay
+    options:
+      view: 'top'
+      output: 'NanoCAN-3D_ortho.png'
+      rotate_x: 4
+      rotate_y: 4
+      rotate_z: 4
+      ray_tracing: true
+      auto_crop: true
