@@ -97,5 +97,5 @@ outputs:
       view: 'top'
       output: 'NanoCAN-3D_ortho.png'
       rotate_x: 5
-      ray_tracing: true
+      #ray_tracing: true
       auto_crop: true
