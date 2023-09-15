@@ -26,9 +26,12 @@ jobs:
       #  board: '*.kicad_pcb'
     - name: Crop Images
       run: |
-        convert output/PCBWay/NanoCAN-3D_ortho.png -crop 475x166+394+0
-        convert output/PCBWay/NanoCAN-3D_top.png -crop 475x166+394+0
-        convert output/PCBWay/NanoCAN-3D_bottom.png -crop 475x166+394+0
+        convert output/PCBWay/NanoCAN-3D_ortho.png -crop 475x166+394+0 output/PCBWay/NanoCAN-3D_ortho_crop.png
+        convert output/PCBWay/NanoCAN-3D_top.png -crop 475x166+394+0 output/PCBWay/NanoCAN-3D_top_crop.png
+        convert output/PCBWay/NanoCAN-3D_bottom.png -crop 475x166+394+0 output/PCBWay/NanoCAN-3D_bottom_crop.png
+        mv -f output/PCBWay/NanoCAN-3D_bottom_crop.png  output/PCBWay/NanoCAN-3D_bottom.png
+        mv -f output/PCBWay/NanoCAN-3D_top_crop.png  output/PCBWay/NanoCAN-3D_top.png
+        mv -f output/PCBWay/NanoCAN-3D_ortho_crop.png  output/PCBWay/NanoCAN-3D_ortho.png
     - name: upload results
       uses: actions/upload-artifact@v2
       with:
