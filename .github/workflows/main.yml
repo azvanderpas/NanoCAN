@@ -26,7 +26,7 @@ jobs:
       #  board: '*.kicad_pcb'
     - name: Crop Images
       run: |
-        sudo convert output/PCBWay/NanoCAN-3D_ortho.png -crop 480x17a+400+260 output/PCBWay/NanoCAN-3D_ortho_crop.png
+        sudo convert output/PCBWay/NanoCAN-3D_ortho.png -crop 480x180+400+260 output/PCBWay/NanoCAN-3D_ortho_crop.png
         sudo convert output/PCBWay/NanoCAN-3D_top.png -crop 460x195+410+260  output/PCBWay/NanoCAN-3D_top_crop.png
         sudo convert output/PCBWay/NanoCAN-3D_bottom.png -crop 460x195+410+260 output/PCBWay/NanoCAN-3D_bottom_crop.png
         #sudo mv -f output/PCBWay/NanoCAN-3D_bottom_crop.png  output/PCBWay/NanoCAN-3D_bottom.png
