@@ -1,6 +1,6 @@
 name: NanoCAN
 
-on: 
+on:
   pull_request:
   push:
     paths-ignore:
@@ -24,6 +24,11 @@ jobs:
       #  schema: '*.kicad_sch'
       # optional - PCB design file
       #  board: '*.kicad_pcb'
+    - name: Crop Images
+      run: |
+        convert output/PCBWay/NanoCAN-3D_ortho.png -crop 475x166+394+0
+        convert output/PCBWay/NanoCAN-3D_top.png -crop 475x166+394+0
+        convert output/PCBWay/NanoCAN-3D_bottom.png -crop 475x166+394+0
     - name: upload results
       uses: actions/upload-artifact@v2
       with:
